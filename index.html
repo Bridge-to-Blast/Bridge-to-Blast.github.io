@@ -8,44 +8,44 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Staking Polygon (POL) — Rewards, APY/APR, Validators, Calculator, Safety &amp; Troubleshooting (2026)</title>
-  <meta name="description" content="Staking Polygon (POL) guide (2026): how Polygon staking works, rewards and real yield, APY vs APR, how to stake step-by-step, validator list criteria, minimum POL, calculator framework, best practices, risks, safety checks, comparisons vs liquid staking, and troubleshooting. Includes KPIs, runbook, and a deep FAQ.">
+  <title>Bridge to Blast — Official Bridge, Supported Tokens, Fees, Time, Safety & Troubleshooting (2026)</title>
+  <meta name="description" content="Bridge to Blast (2026) guide: how to bridge to Blast Mainnet safely, supported tokens (ETH/WETH/USDB/WBTC), real fee & timing model, step-by-step deposit/withdraw workflow, contract verification, risk-reduction best practices, and troubleshooting for pending or missing transfers. Includes checklists, tables, and a deep FAQ.">
   <meta name="author" content="Crypto Finance Experts">
-  <link rel="canonical" href="https://staking-polygon.example.com/">
+  <link rel="canonical" href="REPLACE_CANONICAL" />
 
-  <!-- Favicon (use your local file) -->
-  <link rel="icon" type="image/png" href="polygon-logo-png_seeklogo-527156.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logoblast.png">
 
   <!-- Open Graph -->
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://staking-polygon.example.com/">
-  <meta property="og:title" content="Staking Polygon (POL) — Rewards, APY/APR, Validators, Calculator, Safety &amp; Troubleshooting (2026)">
-  <meta property="og:description" content="Practical Staking Polygon (POL) guide: rewards, APY/APR, validator selection, safety checklist, calculator framework, and troubleshooting.">
-  <meta property="og:image" content="cover.png">
+  <meta property="og:url" content="REPLACE_CANONICAL">
+  <meta property="og:title" content="Bridge to Blast — Tokens, Fees, Time, Safety & Troubleshooting (2026)">
+  <meta property="og:description" content="Practical Bridge to Blast guide: routes, supported assets, cost model, safety checklist, and fixes for stuck transfers.">
+  <meta property="og:image" content="blasthero.png">
 
   <!-- Twitter Card -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://staking-polygon.example.com/">
-  <meta property="twitter:title" content="Staking Polygon (POL) — Rewards, APY/APR, Validators, Calculator, Safety &amp; Troubleshooting (2026)">
-  <meta property="twitter:description" content="Deep Polygon staking guide: yield drivers, validator criteria, minimum POL, best practices, and risks in 2025–2026.">
-  <meta property="twitter:image" content="cover.png">
+  <meta property="twitter:url" content="REPLACE_CANONICAL">
+  <meta property="twitter:title" content="Bridge to Blast — Best Way to Bridge to Blast (2026)">
+  <meta property="twitter:description" content="Bridge to Blast safely: supported assets, fees, transfer times, verification, and troubleshooting.">
+  <meta property="twitter:image" content="blasthero.png">
 
   <style>
     :root{
-      /* Black–Purple Theme */
-      --primary:#A855F7;       /* purple-500 */
-      --primary-600:#9333EA;   /* purple-600 */
-      --primary-700:#7E22CE;   /* purple-700 */
-      --accent:#22D3EE;        /* cyan accent for tiny highlights */
+      /* Blast-ish Dark Yellow Theme */
+      --primary:#F5C542;
+      --primary-600:#E7B62F;
+      --primary-700:#C99610;
 
-      --ink:#F8FAFC;           /* near-white text */
-      --muted:#A1A1AA;         /* zinc-400 */
-      --muted-2:#71717A;       /* zinc-500 */
+      --accent:#FFD866;
+      --ink:#FFF7D6;
+      --muted:#C8C2AA;
+      --muted-2:#9E977F;
 
-      --bg:#070712;            /* deep black/purple */
-      --panel:#0B0B18;
-      --panel-2:#0F0F24;
-      --line:rgba(255,255,255,.10);
+      --bg:#0A0A0B;
+      --panel:#0F1012;
+      --panel-2:#121317;
+      --line:rgba(245,197,66,.18);
 
       --ok:#22C55E;
       --warn:#F59E0B;
@@ -66,10 +66,10 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
       color:var(--muted);
       background:
-        radial-gradient(900px 600px at 15% 0%, rgba(168,85,247,.22), transparent 60%),
-        radial-gradient(900px 600px at 90% 10%, rgba(34,211,238,.10), transparent 60%),
-        radial-gradient(900px 600px at 55% 85%, rgba(126,34,206,.16), transparent 60%),
-        linear-gradient(180deg, #050510 0%, #070712 45%, #050510 100%);
+        radial-gradient(900px 600px at 14% 0%, rgba(245,197,66,.16), transparent 60%),
+        radial-gradient(900px 600px at 92% 12%, rgba(255,216,102,.10), transparent 60%),
+        radial-gradient(900px 600px at 55% 92%, rgba(201,150,16,.10), transparent 60%),
+        linear-gradient(180deg, #070709 0%, #0A0A0B 45%, #070709 100%);
       line-height:1.65;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
@@ -93,18 +93,18 @@
       padding-top:.6rem;
       border-top:1px solid var(--line);
     }
-    h3{font-size:clamp(1.05rem,2.2vw,1.3rem); color:#EDE9FE}
+    h3{font-size:clamp(1.05rem,2.2vw,1.3rem); color:#FFE7A3}
 
     p,li,td,th{font-size:1rem}
-    .lead{font-size:1.125rem; color:#E5E7EB}
+    .lead{font-size:1.125rem; color:#F3E7BF}
     .muted{color:var(--muted)}
     .muted-2{color:var(--muted-2)}
 
     header.hero{
       padding: clamp(2rem,6vw,4rem) 0;
       background:
-        radial-gradient(700px 420px at 18% 10%, rgba(168,85,247,.25), transparent 60%),
-        radial-gradient(700px 420px at 90% 20%, rgba(34,211,238,.12), transparent 60%),
+        radial-gradient(700px 420px at 18% 10%, rgba(245,197,66,.18), transparent 60%),
+        radial-gradient(700px 420px at 90% 20%, rgba(255,216,102,.10), transparent 60%),
         linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0) 55%);
       border-bottom:1px solid var(--line);
     }
@@ -117,7 +117,7 @@
     }
 
     .hero-card{
-      background: linear-gradient(180deg, rgba(15,15,36,.82), rgba(11,11,24,.68));
+      background: linear-gradient(180deg, rgba(18,19,23,.88), rgba(15,16,18,.72));
       border:1px solid var(--line);
       border-radius:var(--radius-lg);
       padding:clamp(1rem,3vw,1.75rem);
@@ -131,40 +131,73 @@
       height:54px;
       border-radius:14px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.06);
+      background:rgba(245,197,66,.10);
       padding:.35rem;
       object-fit:contain;
       box-shadow: 0 10px 22px rgba(0,0,0,.35);
       flex:0 0 auto;
     }
 
+    /* BIGGER + MORE CLICKABLE CTA */
     .cta{
-      display:inline-block;
-      margin-top:1rem;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.6rem;
+
+      width:min(720px, 100%);
+      min-height:74px;
+
+      margin-top:1.1rem;
+      padding:1.1rem 1.6rem;
+
       background:linear-gradient(180deg, var(--primary), var(--primary-700));
-      color:white;
-      padding:.9rem 1.4rem;
-      border-radius:12px;
-      font-weight:900;
+      color:#120F06;
+
+      border-radius:16px;
+      font-weight:950;
+      font-size:1.15rem;
       letter-spacing:.2px;
-      box-shadow:0 14px 32px rgba(168,85,247,.28);
-      border:1px solid rgba(255,255,255,.10);
+
+      box-shadow:0 18px 40px rgba(245,197,66,.22);
+      border:1px solid rgba(245,197,66,.28);
+
+      cursor:pointer;
+      user-select:none;
+      -webkit-tap-highlight-color: transparent;
+
+      transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
     }
-    .cta:hover{filter:brightness(1.05); text-decoration:none}
+    .cta:hover{
+      filter:brightness(1.06);
+      text-decoration:none;
+      transform: translateY(-1px);
+      box-shadow:0 22px 48px rgba(245,197,66,.26);
+    }
+    .cta:active{
+      transform: translateY(0px) scale(.99);
+      filter:brightness(1.02);
+    }
+    .cta:focus-visible{
+      outline:3px solid rgba(255,216,102,.55);
+      outline-offset:4px;
+    }
+
     .cta.secondary{
       background:transparent;
       border:1px solid var(--line);
       color:var(--ink);
-      margin-left:.75rem;
       box-shadow:none;
+      min-height:62px;
+      font-size:1.05rem;
     }
 
     .note{
       border-left:3px solid var(--primary);
       padding:.75rem 1rem;
-      background:rgba(168,85,247,.10);
+      background:rgba(245,197,66,.08);
       border-radius:10px;
-      color:#E5E7EB;
+      color:#F3E7BF;
     }
 
     .hero-media{
@@ -181,7 +214,7 @@
       max-height:520px;
       border-radius:var(--radius-lg);
       border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
+      background:rgba(255,255,255,.02);
       box-shadow:var(--shadow);
       padding:.25rem;
     }
@@ -200,7 +233,7 @@
       max-height:420px;
       border-radius:var(--radius);
       border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
+      background:rgba(255,255,255,.02);
       box-shadow:var(--shadow);
       padding:.25rem;
     }
@@ -208,7 +241,7 @@
     section.step-guide{padding: clamp(2rem,6vw,3.5rem) 0}
     .steps{display:grid; gap:var(--gap); grid-template-columns:1fr;}
     .step{
-      background:linear-gradient(180deg, rgba(15,15,36,.78), rgba(11,11,24,.62));
+      background:linear-gradient(180deg, rgba(18,19,23,.82), rgba(15,16,18,.66));
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:1.2rem;
@@ -219,15 +252,15 @@
     .step .icon{
       width:54px;height:54px;border-radius:50%;
       display:inline-grid; place-items:center;
-      background:rgba(168,85,247,.18);
+      background:rgba(245,197,66,.14);
       margin-bottom:.6rem;
-      color:#EDE9FE;
+      color:#FFE7A3;
       font-weight:950;
-      border:1px solid rgba(255,255,255,.10);
+      border:1px solid rgba(245,197,66,.20);
     }
 
     main .card{
-      background:linear-gradient(180deg, rgba(15,15,36,.70), rgba(11,11,24,.58));
+      background:linear-gradient(180deg, rgba(18,19,23,.78), rgba(15,16,18,.62));
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:1.25rem;
@@ -235,46 +268,42 @@
       box-shadow: 0 12px 26px rgba(0,0,0,.45);
     }
 
-    .grid-2{display:grid; gap:var(--gap); grid-template-columns:1fr;}
     .pillbar{
       display:flex; flex-wrap:wrap; gap:.6rem;
       margin:.75rem 0 0;
     }
     .pill{
       border:1px solid var(--line);
-      background:rgba(255,255,255,.05);
+      background:rgba(245,197,66,.08);
       padding:.4rem .65rem;
       border-radius:999px;
-      font-weight:800;
-      color:#E5E7EB;
-      box-shadow:none;
+      font-weight:900;
+      color:#F3E7BF;
     }
 
     .toc{
       border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(168,85,247,.10), rgba(255,255,255,.02));
+      background:linear-gradient(180deg, rgba(245,197,66,.10), rgba(255,255,255,.02));
       border-radius:var(--radius);
       padding:1rem;
     }
-    .toc strong{color:#F1F5F9}
+    .toc strong{color:#FFF3C7}
     .toc ul{margin:.5rem 0 0; padding-left:1.1rem}
     .toc li{margin:.25rem 0}
-    .toc a{font-weight:800}
+    .toc a{font-weight:950}
 
     table{width:100%; border-collapse:collapse; overflow:hidden; border-radius:12px}
     th,td{padding:.9rem; border-bottom:1px solid var(--line)}
     th{
-      background:rgba(168,85,247,.10);
-      color:#F8FAFC;
+      background:rgba(245,197,66,.10);
+      color:#FFF3C7;
       text-align:left
     }
-    tr.highlight{background:rgba(168,85,247,.08)}
-    tr:hover{background:rgba(255,255,255,.03)}
-
-    .ok{color:var(--ok)} .warn{color:var(--warn)} .err{color:var(--error)}
+    tr.highlight{background:rgba(245,197,66,.06)}
+    tr:hover{background:rgba(255,255,255,.02)}
 
     .eeat{
-      background:linear-gradient(180deg, rgba(168,85,247,.10), rgba(255,255,255,.02));
+      background:linear-gradient(180deg, rgba(245,197,66,.10), rgba(255,255,255,.02));
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:1.25rem;
@@ -290,7 +319,7 @@
     .faq-button h3{margin:0; font-weight:950}
     .faq-content{max-height:0; overflow:hidden; transition:max-height .25s ease}
     .faq-content.open{padding-top:.6rem}
-    .faq-plus{font-weight:950; color:#EDE9FE}
+    .faq-plus{font-weight:950; color:#FFE7A3}
 
     .cta-center{
       display:flex;
@@ -299,19 +328,6 @@
     }
     .cta-center .cta{margin-top:0}
 
-    .badge-row{
-      display:flex; flex-wrap:wrap; gap:.6rem;
-      margin:.9rem 0 0;
-    }
-    .badge{
-      border:1px solid var(--line);
-      background:rgba(34,211,238,.06);
-      padding:.35rem .6rem;
-      border-radius:999px;
-      font-weight:900;
-      color:#E5E7EB;
-    }
-
     .callout-grid{
       display:grid;
       gap:var(--gap);
@@ -319,7 +335,7 @@
       margin-top: .75rem;
     }
     .mini{
-      background:rgba(255,255,255,.03);
+      background:rgba(255,255,255,.02);
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:1rem;
@@ -329,20 +345,36 @@
       display:flex; flex-wrap:wrap; gap:.55rem; margin-top:.5rem;
     }
     .kpi-badges span{
-      border:1px solid rgba(168,85,247,.22);
-      background:rgba(168,85,247,.07);
-      color:#EDE9FE;
+      border:1px solid rgba(245,197,66,.22);
+      background:rgba(245,197,66,.07);
+      color:#FFF3C7;
       padding:.3rem .55rem;
       border-radius:999px;
-      font-weight:900;
+      font-weight:950;
       font-size:.9rem;
+    }
+
+    code.inline{
+      padding:.15rem .35rem;
+      border:1px solid rgba(245,197,66,.22);
+      background:rgba(245,197,66,.07);
+      border-radius:8px;
+      color:#FFF3C7;
+      font-weight:900;
+      white-space:nowrap;
     }
 
     @media (min-width: 860px){
       .hero-grid{grid-template-columns: 1fr;}
       .steps{grid-template-columns: repeat(4, 1fr)}
-      .grid-2{grid-template-columns: 1fr 1fr}
       .callout-grid{grid-template-columns: 1fr 1fr}
+    }
+    @media (max-width: 520px){
+      .cta{
+        min-height:78px;
+        font-size:1.12rem;
+        border-radius:18px;
+      }
     }
   </style>
 </head>
@@ -353,72 +385,88 @@
   <div class="container hero-grid">
     <div class="hero-card" aria-label="Intro">
       <div class="brand-row">
-        <img class="brand-logo" src="polygon-logo-png_seeklogo-527156.png" alt="Staking Polygon logo">
+        <img class="brand-logo" src="logoblast.png" alt="Bridge to Blast logo">
         <div>
-          <div class="muted" style="font-weight:900; letter-spacing:.2px;">Operational Guide</div>
-          <div class="muted-2" style="font-size:.95rem;">Rewards • APY/APR • Validators • Calculator • Safety</div>
+          <div class="muted" style="font-weight:950; letter-spacing:.2px;">Operational Bridge Guide</div>
+          <div class="muted-2" style="font-size:.95rem;">Routes • Tokens • Fees • Time • Safety • Fixes</div>
         </div>
       </div>
 
-      <h1>Staking Polygon (POL)</h1>
+      <h1>Bridge to Blast</h1>
       <p class="lead">
-        This is a practical, security-first guide to <strong>Staking Polygon (POL)</strong>: how staking works end-to-end,
-        what drives rewards, how to compare <strong>APY vs APR</strong>, how to choose validators, how to estimate yield with
-        a calculator framework, and how to avoid the common mistakes that cause lost time (or lost funds).
+        <strong>Bridge to Blast</strong> is a practical, safety-first guide for moving assets to <strong>Blast Mainnet</strong> in 2026.
+        It covers common bridge routes, what tokens are typically bridged (<strong>ETH / WETH / USDB / WBTC</strong>),
+        how fees and timing work, how to verify contracts and receipts in explorers, and how to troubleshoot “pending” or “missing funds” cases.
       </p>
 
-
       <div class="cta-center">
-        <a href="https://staking-polygon.com/" class="cta" aria-label="Open Polygon Staking (placeholder)">Open Polygon Staking</a>
+        <a href="https://blast.io/bridge"
+           class="cta"
+           aria-label="Open official Blast bridge"
+           target="_blank"
+           rel="nofollow noopener">
+          Open Official Blast Bridge
+        </a>
       </div>
 
       <div class="note" style="margin-top:1rem;">
-        <strong>Quick rule:</strong> If you’re staking meaningful size, do a small test delegation first,
-        then scale in. Staking is operational: validator choice, unbonding rules, and wallet hygiene matter.
+        <strong>Quick rule:</strong> a “successful bridge” is not just a UI confirmation.
+        Verify <strong>destination chain</strong>, <strong>token contract</strong>, and <strong>final receipt</strong> in an explorer before scaling size.
+      </div>
+
+      <div class="pillbar" aria-label="Key bridge intents">
+        <span class="pill">Bridge to Blast</span>
+        <span class="pill">Bridge ETH to Blast</span>
+        <span class="pill">Bridge WETH to Blast</span>
+        <span class="pill">USDB on Blast</span>
+        <span class="pill">WBTC on Blast</span>
+        <span class="pill">Fix stuck bridge</span>
       </div>
     </div>
 
     <div class="hero-media" aria-hidden="true">
-      <!-- First top image -->
-      <img class="hero-img" src="snimok-ekrana-2022-01-25-v-16.10.24.png" alt="Staking Polygon overview visual">
+      <img class="hero-img" src="blasthero.png" alt="Bridge to Blast hero image">
     </div>
   </div>
 </header>
 
 <section class="step-guide" aria-labelledby="how-works">
   <div class="container">
-    <h2 id="how-works">Staking Polygon (POL): How the Workflow Works (Choose → Delegate → Earn → Unstake)</h2>
+    <h2 id="how-works">Bridge to Blast: The Workflow (Verify → Bridge → Confirm → Use)</h2>
     <div class="steps" role="list">
       <article class="step" role="listitem">
         <div class="icon">①</div>
-        <h3>Choose a staking method (native vs liquid staking)</h3>
+        <h3>Verify URL, chain, and wallet</h3>
         <p>
-          Decide if you want native delegation (more “direct”, but with lock/unbond rules) or liquid staking
-          (more flexibility, but extra smart-contract and peg/liquidity considerations).
+          Use the official bridge UI, confirm the URL, and verify the correct wallet account.
+          Most “lost funds” incidents are user errors: fake UI, wrong chain, or wrong address.
         </p>
       </article>
+
       <article class="step" role="listitem">
         <div class="icon">②</div>
-        <h3>Select validators (the real risk/return lever)</h3>
+        <h3>Select asset + review route</h3>
         <p>
-          Your validator choice drives uptime risk, slashing exposure, commission drag, and reliability.
-          “Highest APY” is not a strategy if the operator is unstable or opaque.
+          Choose the token you’re bridging (ETH/WETH/USDB/WBTC) and check the quote details:
+          fees, estimates, and any approvals required.
         </p>
       </article>
+
       <article class="step" role="listitem">
         <div class="icon">③</div>
-        <h3>Delegate and track rewards (net yield matters)</h3>
+        <h3>Test deposit → then scale</h3>
         <p>
-          Rewards are not just “APR”: net yield depends on commission, compounding cadence, and any extra
-          fees/constraints. Track realized outcomes, not only quotes.
+          Bridge a small test amount first. Confirm receipt on Blast explorers.
+          Only then bridge meaningful size in tranches.
         </p>
       </article>
+
       <article class="step" role="listitem">
         <div class="icon">④</div>
-        <h3>Unstake safely (timelines, claims, and mistakes)</h3>
+        <h3>Confirm receipt + use funds</h3>
         <p>
-          The exit path is part of the plan: understand unbonding delays, claim steps, and how long capital is illiquid.
-          Most “stuck” issues come from missing exit steps or network mismatch.
+          Verify final receipt on Blast, then move into swaps, lending, or LP.
+          “UI says done” is not a substitute for on-chain confirmation.
         </p>
       </article>
     </div>
@@ -428,484 +476,384 @@
 <main class="container" role="main">
 
   <section class="card toc" aria-label="Table of Contents">
-    <strong>On this page (Staking Polygon):</strong>
+    <strong>On this page (Bridge to Blast):</strong>
     <ul>
-      <li><a href="#overview">Staking Polygon overview (what it is &amp; who it’s for)</a></li>
-      <li><a href="#rewards">Polygon staking rewards: what drives yield</a></li>
-      <li><a href="#apy-apr">Polygon staking APY / APR: how to compare correctly</a></li>
-      <li><a href="#how-to">How to stake Polygon (POL): step-by-step tutorial</a></li>
-      <li><a href="#calculator">Polygon staking calculator: estimation framework</a></li>
-      <li><a href="#validators">Polygon validator list: selection checklist</a></li>
-      <li><a href="#minimum">Polygon staking minimum POL required</a></li>
-      <li><a href="#yield">Polygon staking yield: compounding &amp; net return</a></li>
-      <li><a href="#review">Staking Polygon review: legit, trust, and what to watch</a></li>
-      <li><a href="#safety">Is staking Polygon safe? risks &amp; rewards</a></li>
-      <li><a href="#comparison">Staking Polygon comparison vs liquid staking</a></li>
-      <li><a href="#best-practices">Best way to stake Polygon: best practices</a></li>
-      <li><a href="#troubleshooting">Troubleshooting &amp; common issues</a></li>
-      <li><a href="#eeat">Sources &amp; references</a></li>
+      <li><a href="#overview">Bridge to Blast overview (what it is &amp; who it’s for)</a></li>
+      <li><a href="#supported">Supported tokens &amp; common routes (ETH/WETH/USDB/WBTC)</a></li>
+      <li><a href="#fees">Fees &amp; timing model (what you really pay)</a></li>
+      <li><a href="#how-to">How to bridge to Blast (step-by-step)</a></li>
+      <li><a href="#verify">Verify token contracts &amp; receipts on Blast</a></li>
+      <li><a href="#safety">Bridge to Blast safety checklist</a></li>
+      <li><a href="#troubleshooting">Troubleshooting: pending, missing funds, wrong token</a></li>
+      <li><a href="#eeat">Sources &amp; references (authoritative)</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
   </section>
 
   <section class="card" id="overview">
-    <h2>Staking Polygon Overview: What It Is, and Why People Stake POL</h2>
+    <h2>Bridge to Blast Overview: What It Means</h2>
     <p>
-      <strong>Staking Polygon (POL)</strong> generally means committing POL to help secure network operations (directly or via delegation),
-      earning rewards in return. The trade-off is simple: you exchange liquidity and operational attention
-      (validator selection + rules) for yield and network participation.
+      <strong>Bridge to Blast</strong> means transferring assets from another chain (often Ethereum) onto <strong>Blast Mainnet</strong>.
+      The operational goal is simple: <strong>arrive on Blast with verified funds</strong> and <strong>minimal total cost</strong>,
+      without falling for fake UIs, wrong-chain mistakes, or spoofed tokens.
     </p>
 
     <div class="callout-grid" role="list">
       <div class="mini" role="listitem">
-        <h3>Best use-case</h3>
+        <h3>Best for</h3>
         <p class="muted">
-          Long-term holders who want yield and can tolerate lock/unbond timelines.
+          Users who want to access Blast apps (DEX, lending, LP) and need a repeatable bridge workflow with verification steps.
         </p>
         <div class="kpi-badges">
-          <span>Long-term</span><span>Yield-focused</span><span>Risk-managed</span>
+          <span>Execution-first</span><span>Explorer-verified</span><span>Safety-first</span>
         </div>
       </div>
 
       <div class="mini" role="listitem">
-        <h3>Main constraints</h3>
+        <h3>Main risks</h3>
         <p class="muted">
-          Unbonding delay, validator/operator risk, and the need for careful wallet hygiene.
+          Phishing bridge sites, wrong destination chain, spoofed tokens with matching tickers,
+          and risky approvals/allowances.
         </p>
         <div class="kpi-badges">
-          <span>Illiquidity</span><span>Operator risk</span><span>Process matters</span>
+          <span>Phishing</span><span>Wrong chain</span><span>Token spoofing</span>
         </div>
       </div>
     </div>
 
     <div class="note" style="margin-top:1rem;">
-      <strong>Operational truth:</strong> the “best” staking setup is the one you can exit safely.
-      Always plan the unstake path before you stake.
-    </div>
-
-    <div class="content-media">
-      <!-- Second image -->
-      <img class="content-img" src="poly2.png" alt="Staking Polygon checklist visual">
+      <strong>Operational truth:</strong> the best bridge is the one you can verify on-chain.
+      Always confirm receipts in explorers before you scale size.
     </div>
   </section>
 
-  <section class="card" id="rewards">
-    <h2>Polygon Staking Rewards: What Drives Rewards and Why They Change</h2>
+  <section class="card" id="supported">
+    <h2>Supported Tokens &amp; Common Routes (ETH/WETH/USDB/WBTC)</h2>
     <p>
-      <strong>Polygon staking rewards</strong> vary over time. Your realized outcome depends on network conditions and
-      your validator’s behavior (commission, uptime, performance), plus how you compound.
-    </p>
-    <ul>
-      <li><strong>Validator commission:</strong> your rewards are reduced by the operator’s cut.</li>
-      <li><strong>Uptime/performance:</strong> instability reduces rewards and can increase risk.</li>
-      <li><strong>Compounding cadence:</strong> auto-compound vs manual compounding changes net APY.</li>
-      <li><strong>Operational fees:</strong> some paths require extra transactions (claim/compound/unstake).</li>
-    </ul>
-
-    <div class="note">
-      <strong>Rule:</strong> Treat quoted yield as “gross”. Track net yield after commission + fees + missed time (downtime/unbond).
-    </div>
-  </section>
-
-  <section class="card" id="apy-apr">
-    <h2>Polygon Staking APY / APR: How to Compare Without Getting Tricked</h2>
-    <p>
-      <strong>APR</strong> is typically the “simple rate” (no compounding assumption).
-      <strong>APY</strong> includes a compounding assumption (and can be misleading if compounding isn’t realistic or fees are ignored).
+      People searching <strong>Bridge to Blast</strong> usually want: “What can I bridge, and what do I do after I arrive?”
+      These are the most common bridged assets and how they’re typically used on Blast.
     </p>
 
-    <table aria-label="APY vs APR comparison">
+    <table aria-label="Common bridged assets and their typical use on Blast">
       <thead>
         <tr>
-          <th>Term</th>
-          <th>What it implies</th>
-          <th>Common mistake</th>
+          <th>Asset</th>
+          <th>Typical use on Blast</th>
+          <th>Operational note</th>
         </tr>
       </thead>
       <tbody>
         <tr class="highlight">
-          <td>APR</td>
-          <td>Simple annual rate (no compounding)</td>
-          <td>Assuming APR = final outcome (it ignores compounding and fees)</td>
+          <td><strong>ETH</strong></td>
+          <td>Gas + core liquidity routes</td>
+          <td>Keep a gas buffer before swapping or LPing.</td>
         </tr>
         <tr>
-          <td>APY</td>
-          <td>Annualized rate with compounding assumption</td>
-          <td>Believing APY without checking compounding frequency + transaction costs</td>
+          <td><strong>WETH</strong></td>
+          <td>DEX routing base, DeFi positions</td>
+          <td>Verify canonical contract; tickers can be spoofed.</td>
+        </tr>
+        <tr>
+          <td><strong>USDB</strong></td>
+          <td>Stable value, LP pairs, risk-off positioning</td>
+          <td>Useful for parking value during volatility.</td>
+        </tr>
+        <tr>
+          <td><strong>WBTC</strong></td>
+          <td>BTC exposure on Blast</td>
+          <td>Verify decimals/symbol on explorer; avoid clones.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Most searched “pairs” after bridging</h3>
+    <ul>
+      <li><strong>ETH ↔ WETH</strong> (wrap/unwrap depending on app requirements)</li>
+      <li><strong>WETH ↔ USDB</strong> (common trading + LP route)</li>
+      <li><strong>WETH ↔ WBTC</strong> (BTC exposure via DeFi)</li>
+      <li><strong>WBTC ↔ USDB</strong> (risk-on/risk-off rotation)</li>
+    </ul>
+
+    <div class="content-media">
+      <img class="content-img" src="blast2.png" alt="Bridge to Blast secondary visual">
+    </div>
+
+    <div class="note">
+      <strong>Tip:</strong> If you can’t name the exact contract you’re receiving on Blast, don’t bridge size.
+      Jump to the “Verify token contracts” section below.
+    </div>
+  </section>
+
+  <section class="card" id="fees">
+    <h2>Bridge to Blast Fees &amp; Timing: What You Really Pay</h2>
+    <p>
+      The cost of <strong>Bridge to Blast</strong> is rarely “just one fee.”
+      A realistic model includes source chain gas, possible bridge/relayer fees, and destination gas for actions after arrival.
+    </p>
+
+    <table aria-label="Bridge to Blast cost model">
+      <thead>
+        <tr>
+          <th>Cost line</th>
+          <th>Where it comes from</th>
+          <th>How to reduce it</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight">
+          <td>Source chain gas</td>
+          <td>Approval + bridge deposit transaction</td>
+          <td>Bridge during lower congestion; avoid extra approvals</td>
+        </tr>
+        <tr>
+          <td>Bridge fee / relayer cost</td>
+          <td>Bridge provider pricing</td>
+          <td>Compare quotes; don’t rush if not urgent</td>
+        </tr>
+        <tr>
+          <td>Destination gas</td>
+          <td>Using funds on Blast after arrival</td>
+          <td>Keep an ETH buffer; bundle actions when possible</td>
+        </tr>
+        <tr>
+          <td>User error cost</td>
+          <td>Wrong chain/token/address</td>
+          <td>Always test + verify contracts</td>
         </tr>
       </tbody>
     </table>
 
     <div class="note">
-      <strong>Quick check:</strong> If compounding requires frequent transactions, fees can erase the “APY gap” for small balances.
+      <strong>Practical default:</strong> bridge a small test amount first, then bridge in tranches.
+      This reduces operational mistakes and route surprises.
     </div>
   </section>
 
   <section class="card" id="how-to">
-    <h2>How to Stake Polygon (POL): Tutorial (Clean, Repeatable Workflow)</h2>
+    <h2>How to Bridge to Blast: Step-by-Step (Deposit &amp; Withdraw)</h2>
     <ol>
-      <li><strong>Choose your method:</strong> native staking vs liquid staking (based on your liquidity needs).</li>
-      <li><strong>Prepare wallet hygiene:</strong> verify official URLs, consider hardware wallet for size, keep backups safe.</li>
-      <li><strong>Pick a validator:</strong> assess commission, uptime history, transparency, and operational reputation.</li>
-      <li><strong>Delegate a small test:</strong> verify rewards accrual and that you understand the UI and steps.</li>
-      <li><strong>Scale in:</strong> add stake in tranches to reduce operational mistakes.</li>
-      <li><strong>Track + compound:</strong> decide if compounding is worth it after fees.</li>
-      <li><strong>Plan your exit:</strong> know unbonding/claim rules before you need liquidity.</li>
+      <li><strong>Open the official bridge UI</strong> and confirm the URL (bookmark it).</li>
+      <li><strong>Connect wallet</strong> and confirm the correct account.</li>
+      <li><strong>Select source chain</strong> and set <strong>destination: Blast Mainnet</strong>.</li>
+      <li><strong>Select asset</strong> (ETH / WETH / USDB / WBTC) and review fees + estimated time.</li>
+      <li><strong>Approve only if needed</strong> (avoid unlimited allowance on high-value wallets).</li>
+      <li><strong>Send a test transfer</strong>, then verify receipt on a Blast explorer.</li>
+      <li><strong>Scale</strong> with multiple deposits if bridging meaningful size.</li>
+      <li><strong>Withdraw back</strong> using the same explorer-first verification mindset.</li>
     </ol>
 
     <div class="note">
-      <strong>Best way to stake Polygon:</strong> stable operational setup beats chasing the highest headline number.
-      Reliability + sane commission + safe process wins.
+      <strong>Best practice:</strong> use two-wallet hygiene — <em>vault wallet</em> for holding,
+      <em>interaction wallet</em> for approvals/bridges/dApps.
+      It reduces your blast radius dramatically.
     </div>
   </section>
 
-  <section class="card" id="calculator">
-    <h2>Polygon Staking Calculator: A Practical Estimation Framework</h2>
+  <section class="card" id="verify">
+    <h2>Verify Token Contracts &amp; Receipts on Blast (Non-Negotiable)</h2>
     <p>
-      A <strong>Polygon staking calculator</strong> should estimate your <em>net</em> outcome (not just a marketing APY).
-      Use this framework:
+      “Bridge to Blast” fails in real life because users trust tickers and UI confirmations.
+      Don’t. Verify <strong>contract addresses</strong> (for ERC-20 tokens) and verify <strong>receipts</strong> (for every bridge).
     </p>
 
-    <table aria-label="Staking calculator inputs">
+    <h3>1) Verify receipts (every time)</h3>
+    <table aria-label="Receipt verification checklist">
       <thead>
         <tr>
-          <th>Input</th>
-          <th>Meaning</th>
-          <th>Why it matters</th>
+          <th>What to verify</th>
+          <th>Where to check</th>
+          <th>What “good” looks like</th>
         </tr>
       </thead>
       <tbody>
         <tr class="highlight">
-          <td>Stake amount (POL)</td>
-          <td>Your principal</td>
-          <td>Determines if compounding fees are worth it</td>
+          <td>Source tx confirmed</td>
+          <td>Source chain explorer</td>
+          <td>Finalized/confirmed; correct sender, amount, and destination intent.</td>
         </tr>
         <tr>
-          <td>Gross APR</td>
-          <td>Network/validator rate before compounding</td>
-          <td>Baseline yield driver</td>
+          <td>Destination receipt exists</td>
+          <td>Blast explorer</td>
+          <td>Your address receives the expected asset/value on Blast.</td>
         </tr>
         <tr>
-          <td>Validator commission</td>
-          <td>Operator cut</td>
-          <td>Directly reduces rewards</td>
-        </tr>
-        <tr>
-          <td>Compounding frequency</td>
-          <td>Monthly/weekly/daily (if applicable)</td>
-          <td>Increases APY but may increase fees</td>
-        </tr>
-        <tr>
-          <td>Tx costs</td>
-          <td>Claim/compound/unstake fees</td>
-          <td>Can dominate small portfolios</td>
+          <td>Wallet network = Blast</td>
+          <td>Your wallet</td>
+          <td>Blast Mainnet selected; balance display matches explorer.</td>
         </tr>
       </tbody>
     </table>
 
-    <div class="note">
-      <strong>Calculator takeaway:</strong> For smaller balances, “set and forget” (no frequent compounding) often yields higher net results after fees.
-    </div>
-  </section>
-
-  <section class="card" id="validators">
-    <h2>Polygon Validator List: How to Choose the Right Validator</h2>
-    <p>
-      Instead of chasing “top APR”, evaluate validators like infrastructure providers.
-      A strong <strong>Polygon validator list</strong> checklist:
-    </p>
-    <ul>
-      <li><strong>Commission:</strong> reasonable and stable (avoid sudden spikes).</li>
-      <li><strong>Uptime &amp; reliability:</strong> consistent performance matters more than hype.</li>
-      <li><strong>Transparency:</strong> clear operator identity, documentation, and communication.</li>
-      <li><strong>Risk posture:</strong> sensible security practices and operational maturity.</li>
-    </ul>
-
-    <div class="note">
-      <strong>Heuristic:</strong> Pick validators you can explain in one sentence (who they are + why you trust their operations).
-    </div>
-  </section>
-
-  <section class="card" id="minimum">
-    <h2>Polygon Staking Minimum POL Required</h2>
-    <p>
-      The <strong>Polygon staking minimum POL required</strong> depends on the staking method and platform.
-      In practice, your “real minimum” is the amount where fees don’t crush net yield and you can still afford
-      exit transactions if needed.
-    </p>
-    <ul>
-      <li><strong>Hard minimum:</strong> varies by method/platform.</li>
-      <li><strong>Practical minimum:</strong> enough POL so periodic transactions (claim/compound/unstake) don’t eat yield.</li>
-      <li><strong>Safety minimum:</strong> keep extra for network fees and recovery actions.</li>
-    </ul>
-
-    <div class="note">
-      <strong>Rule:</strong> Always keep a gas buffer; being “all-in” is how people get stuck.
-    </div>
-  </section>
-
-  <section class="card" id="yield">
-    <h2>Polygon Staking Yield: How to Think About Net Returns</h2>
-    <p>
-      <strong>Polygon staking yield</strong> should be evaluated as <em>net</em> performance: rewards minus commissions minus fees,
-      adjusted for time locked/unbonded and any downtime.
+    <h3 style="margin-top:1.2rem;">2) Verify canonical token contracts (for ERC-20)</h3>
+    <p class="muted">
+      Use official docs + explorers to confirm canonical token addresses. Replace these with your verified internal list if you maintain one.
     </p>
 
-    <h3>Net yield checklist</h3>
-    <ul>
-      <li>Gross rewards earned</li>
-      <li>Minus validator commission</li>
-      <li>Minus transaction costs (claim/compound/unstake)</li>
-      <li>Minus “lost time” (unbonding delays / operational downtime)</li>
-    </ul>
+    <table aria-label="Common Blast token contracts (verify in explorer)">
+      <thead>
+        <tr>
+          <th>Token</th>
+          <th>Blast contract address</th>
+          <th>Verification action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight">
+          <td><strong>WETH</strong></td>
+          <td><code class="inline">0x4300000000000000000000000000000000000004</code></td>
+          <td>Open in Blast explorer → confirm token page and transfers</td>
+        </tr>
+        <tr>
+          <td><strong>USDB</strong></td>
+          <td><code class="inline">0x4300000000000000000000000000000000000003</code></td>
+          <td>Verify you received the canonical contract, not a clone</td>
+        </tr>
+        <tr>
+          <td><strong>WBTC</strong></td>
+          <td><code class="inline">0xF7bc58b8D8f97ADC129cfC4c9f45Ce3C0E1D2692</code></td>
+          <td>Confirm decimals/symbol on explorer; avoid spoofed versions</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <div class="note">
-      <strong>Best practice:</strong> Track realized outcomes quarterly. If net yield is not beating your alternative (or risk feels wrong), rotate strategy.
-    </div>
-  </section>
-
-  <section class="card" id="review">
-    <h2>Staking Polygon Review: Legit, Trust, and What to Watch (2025–2026)</h2>
-    <p>
-      A <strong>Staking Polygon review</strong> should focus on predictable outcomes and safety:
-      whether the process is understandable, the validator ecosystem is mature, and the “gotchas” are manageable.
+    <p class="muted-2" style="margin-top:.6rem;">
+      Network info (useful for wallets): RPC <code class="inline">https://rpc.blast.io</code>,
+      Chain ID <code class="inline">81457</code>. Use Blast explorers like Blastscan.
     </p>
 
-    <div class="callout-grid">
-      <div class="mini">
-        <h3>Staking Polygon legit?</h3>
-        <p class="muted">
-          Generally, staking as a mechanism is legitimate. Your real question is: <em>which method/provider</em> and
-          <em>which validator</em> are you trusting operationally.
-        </p>
-      </div>
-      <div class="mini">
-        <h3>Staking Polygon trust</h3>
-        <p class="muted">
-          Trust is earned via transparency: clear docs, known operators, consistent performance, and a clean exit path.
-        </p>
-      </div>
-    </div>
-
     <div class="note">
-      <strong>2025 / 2026 lens:</strong> The market rewards operational discipline. Assume attackers target approvals, fake sites, and users rushing steps.
+      <strong>Fast safety rule:</strong> if your wallet UI shows a token but the contract address doesn’t match your verified list,
+      stop and investigate before swapping or LPing.
     </div>
   </section>
 
   <section class="card" id="safety">
-    <h2>Staking Polygon Safe? Risks and Rewards (What Actually Matters)</h2>
-    <p>
-      “Safe” is not binary. <strong>Staking Polygon safe</strong> depends on method risk + validator/operator risk + user mistakes.
-      You can reduce risk dramatically with hygiene and conservative choices.
-    </p>
-
-    <h3>Key risks</h3>
+    <h2>Bridge to Blast Safety Checklist (High-Impact)</h2>
     <ul>
-      <li><strong>Smart-contract risk:</strong> higher with extra layers (some liquid staking designs).</li>
-      <li><strong>Validator/operator risk:</strong> downtime, poor ops, slashing exposure.</li>
-      <li><strong>Phishing/approval risk:</strong> fake UIs and bad approvals are top avoidable loss sources.</li>
-      <li><strong>Liquidity risk:</strong> you may not be able to exit instantly (unbonding / market liquidity).</li>
+      <li><strong>Bookmark official links:</strong> don’t Google the bridge every time.</li>
+      <li><strong>Verify destination chain:</strong> ensure it’s Blast Mainnet (not look-alike networks).</li>
+      <li><strong>Verify token contracts:</strong> especially WETH/USDB/WBTC and any imported tokens.</li>
+      <li><strong>Limit approvals:</strong> avoid unlimited allowances for high-value wallets.</li>
+      <li><strong>Test first:</strong> small bridge → verify receipt → then scale.</li>
+      <li><strong>Keep gas buffer:</strong> always keep ETH for destination transactions.</li>
     </ul>
 
     <div class="note">
-      <strong>Hard rule:</strong> Use bookmarks for official sites, prefer minimal approvals, and keep a separate wallet for “daily” dApp usage if you’re staking meaningful size.
-    </div>
-  </section>
-
-  <section class="card" id="comparison">
-    <h2>Staking Polygon Comparison: Native Staking vs Liquid Staking</h2>
-    <p>
-      <strong>Staking Polygon vs liquid staking</strong> is a trade-off between simplicity and flexibility.
-      Choose based on your need for liquidity and your tolerance for extra smart-contract/market risks.
-    </p>
-
-    <table aria-label="Native vs Liquid staking">
-      <thead>
-        <tr>
-          <th>Dimension</th>
-          <th>Native delegation</th>
-          <th>Liquid staking</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="highlight">
-          <td>Liquidity</td>
-          <td>Lower (unbonding delays)</td>
-          <td>Higher (tokenized position, depends on market)</td>
-        </tr>
-        <tr>
-          <td>Complexity</td>
-          <td>Lower</td>
-          <td>Higher (contracts + peg/liquidity)</td>
-        </tr>
-        <tr>
-          <td>Risk surface</td>
-          <td>Validator/operator + protocol rules</td>
-          <td>Native risks + smart-contract + market liquidity risks</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="note">
-      <strong>Decision rule:</strong> If you need quick exits, liquid staking can help—but treat it like an additional layer of risk.
-    </div>
-  </section>
-
-  <section class="card" id="best-practices">
-    <h2>Best Way to Stake Polygon: Best Practices (Simple, High-Impact)</h2>
-    <ul>
-      <li><strong>Use a hardware wallet</strong> for meaningful amounts.</li>
-      <li><strong>Delegate in tranches</strong> (test small, then scale).</li>
-      <li><strong>Prefer reputable validators</strong> with stable commission and strong ops.</li>
-      <li><strong>Keep a gas buffer</strong> for claim/unstake/recovery actions.</li>
-      <li><strong>Review allowances periodically</strong> and revoke stale permissions.</li>
-      <li><strong>Track net yield</strong> (not just headline APY).</li>
-    </ul>
-
-    <div class="note">
-      <strong>Most common mistake:</strong> users optimize for +0.5% yield and ignore the 10× bigger risk: bad ops + bad security habits.
+      <strong>Most common loss vector:</strong> phishing + approvals.
+      The best “security tool” is habits: bookmarks, small tests, and contract verification.
     </div>
   </section>
 
   <section class="card" id="troubleshooting">
-    <h2>Staking Polygon Troubleshooting: Common Issues, Root Causes, Fixes</h2>
+    <h2>Bridge to Blast Troubleshooting: Common Issues, Root Causes, Fixes</h2>
 
-    <h3>“Rewards not showing”</h3>
+    <h3>“My bridge transfer is pending / stuck”</h3>
     <ul>
-      <li>You’re viewing the wrong network/account in the wallet.</li>
-      <li>Rewards accrue but require a claim/refresh action in the UI.</li>
-      <li>Validator has downtime or reporting lag—check on-chain data if available.</li>
+      <li>Source chain congestion: the tx isn’t confirmed yet → check tx hash in the source explorer.</li>
+      <li>Gas too low: speed up / replace if your wallet supports it.</li>
+      <li>Bridge processing delay: confirm the destination receipt trail in a Blast explorer.</li>
     </ul>
 
-    <h3>“Can’t unstake / withdraw”</h3>
+    <h3>“Funds arrived but I can’t see them”</h3>
     <ul>
-      <li>Unbonding period is active (wait until it completes).</li>
-      <li>There is a claim/finalize step you haven’t executed.</li>
-      <li>You don’t have enough gas for the exit transaction.</li>
+      <li>Wrong network selected in wallet (switch to Blast).</li>
+      <li>Token not imported → import by verified contract address (for ERC-20).</li>
+      <li>Wallet caching → refresh, restart, or re-add the network.</li>
     </ul>
 
-    <h3>“APY seems lower than expected”</h3>
+    <h3>“I received a token with the same ticker but it looks wrong”</h3>
     <ul>
-      <li>Commission is higher than assumed.</li>
-      <li>Compounding is not happening (or fees make it not worth it).</li>
-      <li>Validator performance/uptime reduced realized rewards.</li>
+      <li>Contract spoofing: compare address to your verified list.</li>
+      <li>Stop swapping until verified in a Blast explorer.</li>
     </ul>
 
     <div class="note">
-      <strong>Best debugging method:</strong> verify state from the chain / official dashboards first, then UI second.
-      UI can lag; on-chain data is the source of truth.
+      <strong>Best debugging method:</strong> explorers first, UI second.
+      Always anchor on tx hashes and contract addresses.
     </div>
   </section>
 
   <section class="eeat" id="eeat" aria-labelledby="eeat-title">
-    <h2 id="eeat-title">Staking Polygon: Authoritative Notes &amp; External References</h2>
+    <h2 id="eeat-title">Bridge to Blast: Authoritative Notes &amp; External References</h2>
     <p>
-      Replace placeholder links with your chosen authoritative sources. Keep this block “clean” (official docs, reputable security resources,
-      and dashboards) to strengthen EEAT.
+      Keep this block clean and credible. Official docs + explorers + official bridge UI are the strongest EEAT signals for a “Bridge to Blast” page.
     </p>
 
-    <h3>Polygon / Staking</h3>
+    <h3>Official Blast resources</h3>
     <ul>
-      <li><a href="#" target="_blank" rel="noopener nofollow">Polygon — Official Site</a></li>
-      <li><a href="#" target="_blank" rel="noopener nofollow">Polygon Staking — Official Docs</a></li>
-      <li><a href="#" target="_blank" rel="noopener nofollow">Polygon Validators — Explorer / Dashboard</a></li>
+      <li><a href="https://blast.io/bridge" target="_blank" rel="noopener nofollow">Blast — Official Bridge</a></li>
+      <li><a href="https://docs.blast.io/building/network-information" target="_blank" rel="noopener nofollow">Blast Docs — Network Information (RPC / Chain ID)</a></li>
+      <li><a href="https://docs.blast.io/building/bridged-token-addresses" target="_blank" rel="noopener nofollow">Blast Docs — Bridged Token Addresses</a></li>
+      <li><a href="https://docs.blast.io/tools/block-explorers" target="_blank" rel="noopener nofollow">Blast Docs — Block Explorers</a></li>
     </ul>
 
-    <h3>Security hygiene</h3>
+    <h3>Explorers &amp; approval safety</h3>
     <ul>
+      <li><a href="https://blastscan.io/" target="_blank" rel="noopener nofollow">Blastscan — Blast Mainnet explorer</a></li>
       <li><a href="https://ethereum.org/guides/how-to-revoke-token-access/" target="_blank" rel="noopener nofollow">Ethereum.org — Revoke Token Approvals</a></li>
-      <li><a href="https://revoke.cash/" target="_blank" rel="noopener nofollow">Revoke.cash — Allowance Management</a></li>
-      <li><a href="https://blog.openzeppelin.com/" target="_blank" rel="noopener nofollow">OpenZeppelin — Smart Contract Security</a></li>
-      <li><a href="https://consensys.io/blog" target="_blank" rel="noopener nofollow">Consensys — Security Research</a></li>
+      <li><a href="https://revoke.cash/" target="_blank" rel="noopener nofollow">Revoke.cash — Allowance management</a></li>
     </ul>
 
     <div class="note">
-      <strong>About:</strong> Prepared by Crypto Finance Experts as a practical SEO-oriented knowledge base for <em>Staking Polygon (POL)</em>:
-      rewards, APY/APR, validators, calculator framework, safety, comparisons, and troubleshooting.
+      <strong>About:</strong> Prepared by Crypto Finance Experts as an SEO-oriented knowledge base for <em>Bridge to Blast</em>:
+      bridging workflow, supported assets, verification, safety checklist, and troubleshooting.
     </div>
   </section>
 
   <section class="card faq-section" aria-labelledby="faq">
-    <h2 id="faq">Staking Polygon (POL): Frequently Asked Questions</h2>
+    <h2 id="faq">Bridge to Blast: Frequently Asked Questions</h2>
 
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f1" id="b1">
-        <h3>What is Staking Polygon (POL) and how does it work?</h3><span class="faq-plus">+</span>
+        <h3>What does “Bridge to Blast” mean?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f1" class="faq-content" role="region" aria-labelledby="b1">
-        <p><strong>Staking Polygon (POL)</strong> typically involves delegating POL to validators (or using a staking method that represents your stake) to earn rewards while supporting network operations.</p>
+        <p><strong>Bridge to Blast</strong> means transferring assets from another chain to <strong>Blast Mainnet</strong> using a bridge, then verifying the final receipt on a Blast explorer before using funds in the ecosystem.</p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f2" id="b2">
-        <h3>Polygon staking rewards: what affects my yield?</h3><span class="faq-plus">+</span>
+        <h3>What tokens can I bridge to Blast?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f2" class="faq-content" role="region" aria-labelledby="b2">
-        <p>Your net yield depends on gross rate, validator commission, validator performance/uptime, compounding behavior, and transaction costs for claim/compound/unstake actions.</p>
+        <p>Common bridged assets include <strong>ETH</strong>, <strong>WETH</strong>, <strong>USDB</strong>, and <strong>WBTC</strong>. Always verify token contracts on Blast before swapping or LPing.</p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f3" id="b3">
-        <h3>Polygon staking APY / APR: which should I trust?</h3><span class="faq-plus">+</span>
+        <h3>How do I bridge to Blast safely?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f3" class="faq-content" role="region" aria-labelledby="b3">
-        <p>APR is a simple rate; APY assumes compounding. Trust the number that matches your actual compounding cadence and includes fees/commission in the net estimate.</p>
+        <p>Bookmark the official bridge, confirm chain/address, bridge a small test amount, verify receipt in a Blast explorer, then scale in tranches. Avoid unlimited approvals on high-value wallets.</p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f4" id="b4">
-        <h3>How to stake Polygon (POL) safely?</h3><span class="faq-plus">+</span>
+        <h3>Why is my bridge transfer pending or stuck?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f4" class="faq-content" role="region" aria-labelledby="b4">
-        <p>Use official links (bookmarks), consider a hardware wallet for size, delegate a small test first, choose reputable validators, and keep a gas buffer for exits and recovery actions.</p>
+        <p>Most often it’s source chain congestion, low gas, or bridge processing delay. Check the source tx hash first, then confirm destination receipts on a Blast explorer.</p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f5" id="b5">
-        <h3>Staking Polygon safe, legit, and trustworthy in 2026?</h3><span class="faq-plus">+</span>
+        <h3>Bridge says completed but I can’t see funds — what do I do?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f5" class="faq-content" role="region" aria-labelledby="b5">
-        <p>Staking as a mechanism can be legitimate, but outcomes depend on method/provider risk, validator quality, and user security hygiene. Treat phishing and approvals as the top avoidable risks.</p>
+        <p>Switch wallet network to Blast, refresh the wallet UI, import ERC-20 tokens by verified contract, and confirm the destination receipt in a Blast explorer.</p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f6" id="b6">
-        <h3>Polygon validator list: what matters most?</h3><span class="faq-plus">+</span>
+        <h3>What fees do I pay when bridging to Blast?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f6" class="faq-content" role="region" aria-labelledby="b6">
-        <p>Look for stable commission, strong uptime/performance, transparency, and operational reputation. Avoid unknown operators offering eye-catching headline rates.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-button" aria-expanded="false" aria-controls="f7" id="b7">
-        <h3>Staking Polygon vs liquid staking: which is better?</h3><span class="faq-plus">+</span>
-      </button>
-      <div id="f7" class="faq-content" role="region" aria-labelledby="b7">
-        <p>Native staking is simpler but less liquid; liquid staking may be more flexible but adds smart-contract and market liquidity/peg risks. Choose based on your need for fast exits.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-button" aria-expanded="false" aria-controls="f8" id="b8">
-        <h3>Polygon staking calculator: what inputs do I need?</h3><span class="faq-plus">+</span>
-      </button>
-      <div id="f8" class="faq-content" role="region" aria-labelledby="b8">
-        <p>Stake amount, gross APR, validator commission, compounding frequency, and transaction costs. The goal is a net yield estimate, not a marketing APY.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-button" aria-expanded="false" aria-controls="f9" id="b9">
-        <h3>Why can’t I unstake or withdraw right now?</h3><span class="faq-plus">+</span>
-      </button>
-      <div id="f9" class="faq-content" role="region" aria-labelledby="b9">
-        <p>Most commonly: an unbonding period is still running, a claim/finalize step is required, or you lack gas for the exit transaction.</p>
+        <p>Total cost usually includes source chain gas, bridge/relayer fees, and destination gas for actions after arrival. The cheapest path depends on congestion and timing.</p>
       </div>
     </div>
 
@@ -914,21 +862,41 @@
 </main>
 
 <footer class="container" role="contentinfo" style="padding:2rem 0; border-top:1px solid var(--line); margin-top:2rem">
-  <p class="muted">© 2026 Staking Polygon (POL) Guide. Educational content with safety-first operational focus.</p>
+  <p class="muted">© 2026 Bridge to Blast Guide. Educational content with safety-first operational focus.</p>
 </footer>
 
+<script>
+  // FAQ accordion (accessible)
+  (function(){
+    var buttons = document.querySelectorAll('.faq-button');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var controls = btn.getAttribute('aria-controls');
+        var panel = document.getElementById(controls);
+        if(!panel) return;
 
+        var isOpen = btn.getAttribute('aria-expanded') === 'true';
 
+        // close all
+        buttons.forEach(function(b){
+          b.setAttribute('aria-expanded','false');
+          var c = b.getAttribute('aria-controls');
+          var p = document.getElementById(c);
+          if(p){
+            p.style.maxHeight = null;
+            p.classList.remove('open');
+          }
+        });
 
+        if(!isOpen){
+          btn.setAttribute('aria-expanded','true');
+          panel.classList.add('open');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+  })();
+</script>
 
-
-
-
-
-
-
-
-
-
-
-</body></html>
+</body>
+</html>
